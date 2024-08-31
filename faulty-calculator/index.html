@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+
+function inputInfo() {
+    let num1, num2, operation;
+    num1 = parseFloat(prompt("Enter a number  : "));
+    num2 =parseFloat( prompt("Enter another number : "));
+    operation = prompt(`Enter the operation you would like :  + , - , / , **,*`);
+    return { num1, num2, operation };
+}
+
+
+
+function rightOperation(num1, num2,operation) {
+    const RightoperationObj = {
+        "+": num1 + num2,
+        "-": num1 - num2,
+        "/": num1 / num2,
+        "*": num1 * num2,
+        "**": num1 ** num2
+    };
+    
+    return RightoperationObj[operation];
+}
+
+
+function wrongOperation(num1, num2,operation) {
+    
+    const WrongoperationObj = {
+        "+": num1 - num2,
+        "*": num1 + num2,
+        "-": num1 / num2,
+        "/": num1 ** num2,
+        "**":num1 *   num2
+    };
+    
+    return WrongoperationObj[operation];
+}
+
+
+function getOperationResult(num1, num2,operation) {
+    let result ;
+    if (Math.random() < 0.1) { // wrong operations
+       result = wrongOperation(num1,num2,operation);
+       alert(`Oops! The result of the operation (with an error) is: ${result}`);
+    }
+    else {
+       result = rightOperation(num1,num2,operation);
+       alert(`The result of the operation is: ${result}`);
+    }
+}
+
+const { num1, num2, operation } = inputInfo();
+// Get and display the operation result
+getOperationResult(num1, num2, operation);
+
+
+
+
+    </script>
+</body>
+</html>

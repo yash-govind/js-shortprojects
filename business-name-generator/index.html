@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+// create 3 functions and 3 strings. //do not use arrays.
+
+function Adjectives(){
+let Choice;
+Choice = parseInt(Math.random()*3);
+if(Choice == 0){
+return "Crazy";
+}
+else if(Choice==1){
+return "Amazing";
+}
+else if(Choice==2){
+return "Fire";
+}
+else{
+    return"Not defined";
+} 
+}
+function ShopName(){
+    let Choice;
+    Choice = parseInt(Math.random()*3);
+    if(Choice == 0){
+    return "Engine";
+    }
+    else if(Choice==1){
+    return "Foods";
+    }
+    else if(Choice==2){
+    return "Garments";
+    }
+    else{
+        return"Not defined";
+    } }
+function AnotherWord(){
+    let Choice;
+    Choice = parseInt(Math.random()*3);
+    if(Choice == 0){
+    return "Bros";
+    }
+    else if(Choice==1){
+    return "Limited";
+    }
+    else if(Choice==2){
+    return "Hub";
+    }
+    else{
+        return"Not defined";
+    } }
+    function BusinessName(){
+        let str="";
+        str+=Adjectives()+ShopName()+AnotherWord();
+        return `Your Business Name is : ${str}`;
+    }
+    alert(BusinessName()); //call the function
+    
+
+
+  
+    </script>
+</body>
+</html>

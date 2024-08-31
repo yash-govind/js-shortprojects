@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.button{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 50px;
+    margin: 30px;
+    border: 2px solid black;
+}
+#grey{
+    background-color: grey;
+}
+#white{
+    background-color: #fff;
+}
+#blue{
+    background-color: blue;
+}
+#yellow{
+    background-color: yellow;
+}
+
+
