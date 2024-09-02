@@ -16,7 +16,7 @@ if(playGame){
     submit.addEventListener('click',function(event){
         event.preventDefault();
    const guess = parseInt( userInput.value ); //guess is the value you entered in the form
-        validateGuess(guess);// 
+        validateGuess(guess);
     })
 }
 
