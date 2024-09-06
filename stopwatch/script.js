@@ -1,58 +1,67 @@
-let timeTaken = 0;
-let startTime = 0;
-let currentTime;
-let timeInterval = 0;
 let hrs, mins, secs;
 hrs = 0;
-mins = 0;
 secs = 0;
-//Date.now() calculates time based on miliseconds since 1970s. lets say x time for now.
+mins = 0;
+let isRunning = false;
+let timeInterval = 0; // to check the time interval if watch is running every 1 secs.
 
-function startTimer() {
-  startTime = Date.now() - timeTaken;
-  timeInterval = setInterval(() => {
-    currentTime = Date.now();
-    timeTaken = currentTime - startTime;
-    displayTime(timeTaken);
-  }, 10);
-}
+//function to start the watch.
 
-//explain this function .
 
-function stopTimer() {
-  clearInterval(timeInterval);
-}
-
-function resetTimer() {
-  clearInterval(timeInterval);
-  timeTaken = 0;
-  displayTime(timeTaken);
-}
-
-function displayTime(time) {
-    var milliseconds = Math.floor((time % 1000) / 10);
-    var seconds = Math.floor((time / 1000) % 60);
-    var minutes = Math.floor((time / 1000 / 60) % 60);
-    var hours = Math.floor((time / 1000 / 60 / 60) % 24); //literally dk wth this is .
-  
-    var displayTime = hours.toString().padStart(2, '0') + ':' +
-                      minutes.toString().padStart(2, '0') + ':' +
-                      seconds.toString().padStart(2, '0') + '.' +
-                      milliseconds.toString().padStart(2, '0');
-  
-    document.querySelector('.display-time').textContent = displayTime;
+function Startwatch() {
+  if (!isRunning) {
+    timeInterval = setInterval(() => {
+      secs++;
+      if (secs === 60) {
+        secs = 0;
+        mins++;
+      }
+      if (mins === 60) {
+        secs = 0;
+        hrs++;
+        mins = 0;
+      }
+      displayWatch();
+    }, 1000);
+    isRunning =true;
    
 }
-const startBtn = document
-  .querySelector(".start")
-  .addEventListener("click", startTimer);
-const pauseBtn = document
-  .querySelector(".pause")
-  .addEventListener("click", stopTimer);
-const resetBtn = document
-  .querySelector(".reset")
-  .addEventListener("click", resetTimer);
+}
 
-//00:00:00 --> 00:00:30
+//function to stop the watch
 
-//  functions --> display() , start(), stop() , reset()
+function stopStopWatch(){
+  if(isRunning){
+    clearInterval(timeInterval);
+    isRunning =false;
+  }
+}
+
+//function to reset the watch
+
+function ResetStopWatch() {
+  clearInterval(timeInterval);
+  timeInterval = 0;
+  hrs = 0;
+  mins = 0;
+  secs = 0;
+  displayWatch();
+}
+
+
+//function to display the watch.
+function displayWatch() {
+  let displayTime =
+    String(hrs).padStart(2, "0") +
+    " : " +
+    String(mins).padStart(2, "0") +
+    " : " +
+    String(secs).padStart(2, "0");
+    
+  document.querySelector(".display-time").innerHTML = displayTime;
+}
+
+
+document.querySelector(".start").addEventListener("click", Startwatch);
+document.querySelector(".stop").addEventListener("click",stopStopWatch)
+document.querySelector(".reset").addEventListener("click", ResetStopWatch);

@@ -5,16 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-
-  <body style="background-color: #212121;color:#fff">
+  <body style="background-color: #212121; color:#fff;">
     <div class="container">
-      <div class="display-time">
-        <div id="time">00:00:00</div>
+      <h1>MY STOPWATCH</h1>
+      <div class ="display-time">00:00:00</div>
+      <div class="container-2">
         <button class="start">Start</button>
-        <button class="pause">Pause</button>
+        <button class="stop">Stop</button>
         <button class="reset">Reset</button>
       </div>
     </div>
   </body>
 </html>
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+  }
+  .container{
+    margin:330px 580px;
+
+
+  }
+ .container-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+ }
+ .display-time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  font-size: xx-large;
+  font-weight: 500px;
+  color: #fff;
+ }
+ .start, .stop , .reset{
+  padding: 30px;
+  border: #212121;
+  border-radius: 15%;
+  background-color:gold;
+  font-size: x-large;
+  font-weight: 500;
+ }
+h1{
+  color: lime;
+}
+
+</style>
 <script src="script.js"></script>
