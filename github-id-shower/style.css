@@ -1,0 +1,29 @@
+body {
+  background-color: #212121;
+  color: #fff;
+}
+.searchbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 710px;
+}
+.go-back {
+  margin: 20px;
+}
+button {
+  background-color: lightgoldenrodyellow;
+  color: black;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 30%;
+  cursor: pointer;
+}
+button:hover {
+  cursor: pointer;
+  color: red;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
