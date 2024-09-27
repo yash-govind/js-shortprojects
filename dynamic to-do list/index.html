@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="todo">
+      <input type="text" class="text-task" placeholder="Enter a task" />
+      <button class="add-task">+</button>
+      <button class="delete-task">x</button>
+      <ul class="task-list"></ul>
+    </div>
+  </body>
+</html>
+
+<script>
+  const inputBtn = document.querySelector(".text-task");
+  const addBtn = document.querySelector(".add-task");
+  const taskList = document.querySelector(".task-list");
+  const deleteBtn = document.querySelector(".delete-task");
+  // selectors for selecting elements.
+
+  //function to addTask
+
+  function newTask() {
+    //render input
+    const inputText = inputBtn.value;
+    // add task , add button .
+    const newTask = document.createElement("li"); //create child ele in list ,
+    newTask.innerHTML = inputText; // render child
+    taskList.appendChild(newTask); // append child to parent list
+    inputBtn.value = ""; //clear the input after adding a task.
+  }
+
+  //function to delete task
+
+  function deleteTask() {
+    const lastTask = taskList.lastElementChild;
+    lastTask.innerHTML = ""; // remove the  last task from list.
+    taskList.removeChild(lastTask);
+  }
+
+  // event listeners for buttons 
+ 
+  deleteBtn.addEventListener("click", deleteTask);
+  addBtn.addEventListener("click", newTask);
+</script>
+
+<style>
+  body {
+    background-color: #212121;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .todo {
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .task-list {
+    list-style-type: none;
+    background-color: blue;
+  }
+</style>

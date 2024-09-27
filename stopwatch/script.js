@@ -2,8 +2,8 @@ let hrs, mins, secs;
 hrs = 0;
 secs = 0;
 mins = 0;
-let isRunning = false;
-let timeInterval = 0; // to check the time interval if watch is running every 1 secs.
+let isRunning = false; // to check if clock is running .
+let timeInterval = 0; // to check the time interval.
 
 //function to start the watch.
 
@@ -57,7 +57,7 @@ function displayWatch() {
     String(mins).padStart(2, "0") +
     " : " +
     String(secs).padStart(2, "0");
-    
+
   document.querySelector(".display-time").innerHTML = displayTime;
 }
 
