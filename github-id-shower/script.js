@@ -23,10 +23,10 @@ searchBtn.addEventListener("click", () => {
 
       searchBtn.style.display = "none";
       TextInput.style.display = "none";
-     header.style.display = "none";
+       header.style.display = "inline";
       userInfo.innerHTML = `
-         <h2> Name : ${data.name}</h2>
          <img src ="${data.avatar_url}"></img>
+         <h2> Name : ${data.name}</h2>
          <p> Followers : ${data.followers}</p>
          <p>Profile URL: <a href="${data.html_url}">${data.html_url}</a></p>
          <p> Location : ${data.location}</p>
@@ -45,4 +45,5 @@ goBackBtn.addEventListener("click", () => {
   searchBtn.style.display = "inline";
   TextInput.style.display = "inline";
   goBackBtn.style.display = "";
+ 
 });

@@ -25,8 +25,7 @@ button:hover {
 h1 {
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 input{
     padding: 10px;
