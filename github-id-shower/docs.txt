@@ -1,0 +1,16 @@
+
+
+made by me + chatgpt , but i understood the code.
+
+Intent:
+
+to practice fetch api , .then sequences , to practice rendering apis in js.
+
+Features : 
+1) can view profile of a random person on github
+2) hides the searchbar when viewing a profile , goes to next state when viewing a profile.
+3) can go back to the previous state to the searchbar.
+
+wishing to add in future :
+1) adding keyboard support for buttons
+2) improving design / css . 
